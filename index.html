@@ -1,13 +1,51 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <div class="py-4">
+    <select id="sort-select">
+      <option value="created_at.desc">Po dacie malejąco</option>
+      <option value="created_at.asc">Po dacie rosnąco</option>
+      <option value="title.asc">Po nazwie alfabetycznie</option>
+    </select>
+  </div>
+  <div>
+    <ul id="articles"></ul>
+  </div>
+  <form id="addArticle" class="flex flex-col gap-2">
+    <div>
+      <label for="title">Tytuł: </label>
+      <input type="text" name="title" id="title" class="border-solid border-2" />
+    </div>
+    <div>
+      <label for="subtitle">Podtytuł: </label>
+      <input type="text" name="subtitle" id="subtitle" class="border-solid border-2" />
+    </div>
+    <div>
+      <label for="author">Autor: </label>
+      <input type="text" name="author" id="author" class="border-solid border-2" />
+    </div>
+    <div>
+      <label for="content">Treść: </label>
+      <input type="text" name="content" id="content" class="border-solid border-2" />
+    </div>
+    <div>
+      <label for="created_at">Data: </label>
+      <input type="datetime-local" name="created_at" id="created_at" class="border-solid border-2" />
+    </div>
+    <div>
+      <button type="submit" class="bg-blue-300 py-3 px-4">Wyślij</button>
+    </div>
+  </form>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>
