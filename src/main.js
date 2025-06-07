@@ -55,8 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const subtitle = e.target.subtitle.value;
     const author = e.target.author.value;
     const content = e.target.content.value;
-
-    const created_at = new Date(e.target.created_at.value).toISOString();
+    const createdDate = e.target.created_at.value;
+    const created_at = createdDate ? new Date(createdDate).toISOString() : "";
 
     const newArticle = {
       title,
@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     await supabase.from('article').insert(newArticle)
     addArticleForm.reset()
+    fetchArticles()
   })
 
   articleOrder.addEventListener('change', fetchArticles)
