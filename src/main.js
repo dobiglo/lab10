@@ -19,7 +19,6 @@ document.querySelector('#app').innerHTML = `
     </div>
   </div>
 `
-
 setupCounter(document.querySelector('#counter'))
 
 const fetchArticles = async () => {
